@@ -132,7 +132,7 @@ namespace EditorGfd
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Location = new System.Drawing.Point(497, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 13);
+            this.label1.Size = new System.Drawing.Size(148, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Propriedades de caracteres";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
