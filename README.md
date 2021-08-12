@@ -1,4 +1,4 @@
-# EditorGfd
+# Editor de Gfd
 Editor de arquivos gfd para o jogo The Great Ace Attorney Chronicles.
 
 Para ultilizar essa ferramenta é necessário as texturas das fontes do jogo em formato .png que podem 
