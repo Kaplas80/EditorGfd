@@ -13,6 +13,7 @@ namespace EditorGfd
         private Bitmap _imagemFonte;
         private bool _ehCarregamento = true;
         private bool _foiModificado = false;
+
         public TelaEditorDeGfd()
         {
             InitializeComponent();
@@ -56,69 +57,6 @@ namespace EditorGfd
         }
 
 
-        private void BtnExportarImagemFonte_Click(object sender, EventArgs e)
-        {
-
-
-            if (TxtCaractere.Text == "#" || TxtCaractere.Text == "/" || TxtCaractere.Text == ":" || TxtCaractere.Text == ";" 
-                || TxtCaractere.Text == "*" || TxtCaractere.Text == "\"" || TxtCaractere.Text == "<" || TxtCaractere.Text == ">" || TxtCaractere.Text == "?")
-            {
-                string nome = "";
-
-                switch (TxtCaractere.Text)
-                {
-                    case "#": nome = "jogo_da_Velha";
-                        break;
-                    case "/":
-                        nome = "Barra_Invertida";
-                        break;
-                    case ":":
-                        nome = "Dois_Pontos";
-                        break;
-                    case ";":
-                        nome = "Ponto_e_Virgula";
-                        break;
-                    case "\"":
-                        nome = "Aspas_duplas";
-                        break;
-                    case "?":
-                        nome = "Interrogacao";
-                        break;
-                    case ">":
-                        nome = "Maior";
-                        break;
-                    case "<":
-                        nome = "Menor";
-                        break;
-
-                    default:
-                        break;
-                }
-
-                _imagemFonte.Save($"{nome}.png");
-            }
-            else
-            {
-                _imagemFonte.Save($"{TxtCaractere.Text}.png");
-            }
-            
-        }
-
-        private void BtnImportarImagemFonte_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = "Arquivos .png (*.png)|*.png";
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    ModificarFonteCarregada(openFileDialog.FileName);
-
-                }
-            }
-        }
-
         private void CarregueGfd(string diretorioGfd)
         {
             _gfd = new Gfd(diretorioGfd);
@@ -154,6 +92,7 @@ namespace EditorGfd
         private void ValorDoCampoFoiAlterado(object sender, EventArgs e)
         {
             AtualizarPreviaDeFonte();
+            TxtPreviaInGame.Enabled = false;
         }
 
         private void BtnSalvar_Click(object sender, EventArgs e)
@@ -181,6 +120,7 @@ namespace EditorGfd
             }
 
             dgFontes.Refresh();
+            TxtPreviaInGame.Enabled = true;
 
         }
 
@@ -190,9 +130,17 @@ namespace EditorGfd
         {
             if (_foiCarregado)
             {
-                _gfd.SalvarGfd();
+                string nomeSalvo = _gfd.SalvarGfd();
                 this.Text = this.Text.Replace("*", "");
-                MessageBox.Show($"Arquivos salvos em:\r\n{_gfd.NomeDoGfd.Replace(".gfd","")}\\{Path.GetFileName(_gfd.CaminhoDeGfd)}");
+                if (!File.Exists(nomeSalvo))
+                {
+                    MessageBox.Show($"Não foi possível salvar o arquivo no seguinte diretório:\r\n{nomeSalvo}");
+                }
+                else
+                {
+                    MessageBox.Show($"Arquivo salvo em:\r\n{nomeSalvo}");
+                }
+                
             }
 
         }
@@ -241,14 +189,15 @@ namespace EditorGfd
             NCorecaoEixoX.Enabled = estado;
             NCorecaoEixoY.Enabled = estado;
             NLarguraGlifo.Enabled = estado;
-            btnExportarImagemFonte.Enabled = estado;
-            btnImportarImagemFonte.Enabled = estado;
             BtnSalvar.Enabled = estado;
             btnSalvarGfd.Enabled = estado;
             lbSalvarGfd.Enabled = estado;
             MsFecharGf.Enabled = estado;
             BtnPesquisar.Enabled = estado;
-            txtPesquisa.Enabled = false;
+            txtPesquisa.Enabled = estado;
+            txtLinhaBase.Enabled = estado;
+            TxtPreviaInGame.Enabled = estado;
+            TxtDescendente.Enabled = estado;
         }
 
 
@@ -285,6 +234,9 @@ namespace EditorGfd
             NCorecaoEixoY.Minimum = -54;
             NCorecaoEixoX.Maximum = (decimal)_gfd.CabecalhoGfd.AlturaMaximaCaractere;
             NCorecaoEixoY.Maximum = (decimal)_gfd.CabecalhoGfd.AlturaMaximaCaractere;
+            txtLinhaBase.Text = _gfd.CabecalhoGfd.LinhaBase.ToString();
+            TxtDescendente.Text = _gfd.CabecalhoGfd.LinhaDescendente.ToString();
+            picPreviaInGame.Image = _gfd.BaseGerarPreviaInGame;
         }
 
 
@@ -302,6 +254,7 @@ namespace EditorGfd
             NLarguraGlifo.Value = (int)info.LarguraDoGlifo;
             _imagemFonte = _gfd.ObtenhaImagemDeGlifo(_gfd.PropriedadesDeGlifos[dgFontes.CurrentCell.RowIndex]);
             PBCaractere.Image = _gfd.GerarImagemComTratamento(info);
+            PreviaComLinhaBase();
         }
 
 
@@ -370,8 +323,12 @@ namespace EditorGfd
             {
                 char charPesquisa = Convert.ToChar(txtPesquisa.Text);
                 int index = _gfd.PropriedadesDeGlifos.FindIndex(p => p.Caractere == charPesquisa);
-                if (index != 0)
+                if (index > -1 || index ==  0 && charPesquisa == ' ')
                     dgFontes.CurrentCell = dgFontes.Rows[index].Cells[0];
+                else
+                {
+                    MessageBox.Show($"Caractere \"{charPesquisa}\" não encontrado.");
+                }
             }           
         }
 
@@ -385,8 +342,31 @@ namespace EditorGfd
                     PropriedadesDeGlifo info = _gfd.PropriedadesDeGlifos[dgFontes.CurrentCell.RowIndex];
                     CarregarCamposFormulario(info);
                     _ehCarregamento = false;
+                    TxtPreviaInGame.Enabled = true;
                 }
             }
+        }
+
+        private void TxtPreviaInGame_TextChanged(object sender, EventArgs e)
+        {
+            GerarPreviaInGame(TxtPreviaInGame.Text);
+        }
+
+        private void GerarPreviaInGame(string texto) 
+        {
+          picPreviaInGame.Image =  _gfd.GerarPreviaInGame(texto, _gfd.BaseGerarPreviaInGame);
+        }
+
+        private void CorecaoEixo_ValueChanged(object sender, EventArgs e)
+        {
+            PreviaComLinhaBase();
+            TxtPreviaInGame.Enabled = false;
+        }
+
+        private void PreviaComLinhaBase() 
+        {
+            PropriedadesDeGlifo info = _gfd.PropriedadesDeGlifos[dgFontes.CurrentCell.RowIndex];
+            picCorecao.Image = _gfd.GerarPreviaComLinhaBaseIndividual(TxtCaractere.Text, Convert.ToInt32(NCorecaoEixoY.Value), Convert.ToInt32(NCorecaoEixoX.Value), info);
         }
     }
 }

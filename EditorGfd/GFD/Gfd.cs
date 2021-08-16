@@ -15,6 +15,8 @@ namespace EditorGfd.GFD
         public List<string> DiretoriosDeTexturas { get; set; }
         public string CaminhoDeGfd { get; set; }
         public string NomeDoGfd { get; set; }
+        public Image BaseGerarPreviaInGame { get; set; }
+        public Image PreviaComLinhaBaseIdividual { get; set; }
 
         public Gfd(string diretorioGfd)
         {
@@ -42,9 +44,26 @@ namespace EditorGfd.GFD
 
             PropriedadesDeGlifos = PropriedadesDeGlifos.OrderBy(c => c.Codigo).ToList();
             br.Close();
+
+            BaseGerarPreviaInGame = GerarImagensDePrevia(new Bitmap(370, 100));
+            PreviaComLinhaBaseIdividual = GerarImagensDePrevia(new Bitmap(150, 150));
+
         }
 
-        public void SalvarGfd()
+        private Bitmap GerarImagensDePrevia(Bitmap bitmap) 
+        {
+            using (Graphics g = Graphics.FromImage(bitmap))
+            {
+                Pen penLinhaBase = new Pen(Color.Green);
+                Pen penLinhaDescendente = new Pen(Color.Purple);
+                g.DrawLine(penLinhaBase, new Point(0, (int)CabecalhoGfd.LinhaBase), new Point(bitmap.Width, (int)CabecalhoGfd.LinhaBase));
+                g.DrawLine(penLinhaDescendente, new Point(0, (int)CabecalhoGfd.LinhaBase + (int)CabecalhoGfd.LinhaDescendente), new Point(bitmap.Width, (int)CabecalhoGfd.LinhaBase + (int)CabecalhoGfd.LinhaDescendente));
+
+            }
+            return bitmap;
+        }
+
+        public string SalvarGfd()
         {
             MemoryStream novoGfd = new MemoryStream();
             BinaryWriter bw = new BinaryWriter(novoGfd);
@@ -64,12 +83,9 @@ namespace EditorGfd.GFD
                 Directory.CreateDirectory(nomeDoGfdSemExt);
             }
 
-            //foreach (var glifo in ImagensDeGlifos)
-            //{
-            //    glifo.Imagem.Save($"{CabecalhoGfd.NomeDaTextura}\\{Path.GetFileName(glifo.Diretorio)}");
-            //}
-
-            File.WriteAllBytes($"{nomeDoGfdSemExt}\\{NomeDoGfd}", novoGfd.ToArray());
+            string nomeArquivoSalvo = $"{nomeDoGfdSemExt}\\{DateTime.Now:dd-MM-yyyy-HH-mm-ss}_{NomeDoGfd}";
+            File.WriteAllBytes(nomeArquivoSalvo, novoGfd.ToArray());
+            return nomeArquivoSalvo;
 
         }
 
@@ -204,9 +220,10 @@ namespace EditorGfd.GFD
                 using (Graphics g = Graphics.FromImage(fonte))
                 {
                     Pen penLargCarac = new Pen(Color.Red);
+                    Pen penalturaCarac = new Pen(Color.Orange);
                     Pen penLargGlifo = new Pen(Color.Blue);
                     g.DrawLine(penLargCarac, new Point(0, alturaCaractere - 1), new Point(larguraCaractere - 1, alturaCaractere - 1));
-                    g.DrawLine(penLargCarac, new Point(larguraCaractere - 1, 0), new Point(larguraCaractere - 1, alturaCaractere - 1));
+                    g.DrawLine(penalturaCarac, new Point(larguraCaractere - 1, 0), new Point(larguraCaractere - 1, alturaCaractere - 1));
                     g.DrawLine(penLargGlifo, new Point(larguraDoGlifo - 1, 0), new Point(larguraDoGlifo - 1, alturaCaractere - 1));
                 }
 
@@ -216,27 +233,48 @@ namespace EditorGfd.GFD
             return null;
         }
 
-        public string VerificaColisaoDeCaracteres(int larguraCaractere, int alturaCaractere, int larguraDoGlifo, int correcaoX, int correcaoY, string caractere, PropriedadesDeGlifo propriedade)
+
+        public Bitmap GerarPreviaInGame(string texto, Image bitmap)
         {
+            Bitmap previa = new Bitmap(bitmap);
 
-            int totalX = propriedade.PosicaoGlifoConvertidaX + (int)propriedade.LarguraDoGlifo -1;
-            int totalY = propriedade.PosicaoGlifoConvertidaY + (int)propriedade.AlturaDoCaractere;
-           
-            var letras = PropriedadesDeGlifos.Where(infoC =>
-            totalX > infoC.PosicaoGlifoConvertidaX &&
-            infoC.PosicaoGlifoConvertidaX > propriedade.PosicaoGlifoConvertidaX  &&
-            infoC.IdTextura == propriedade.IdTextura &&
-            totalY >= infoC.PosicaoGlifoConvertidaY && 
-            infoC.PosicaoGlifoConvertidaY + infoC.AlturaDoCaractere >= propriedade.PosicaoGlifoConvertidaY)
-                .Select( i => i.Caractere)
-                .ToList();        
-            
-            return string.Join(",", letras);
+            using (Graphics g = Graphics.FromImage(previa))
+            {
+                int valorX = 4;
+
+                foreach (char letra in texto)
+                {
+                    PropriedadesDeGlifo pg = PropriedadesDeGlifos.Where(p => p.Caractere == letra).FirstOrDefault();
+
+                    if (pg != null)
+                    {
+                        g.DrawImage(ObtenhaImagemDeGlifo(pg), valorX + pg.CorrecaoX,pg.CorrecaoY);
+                        valorX += (int)pg.LarguraDoGlifo;
+                    }
+                }
+
+            }
 
 
+            return previa;
         }
 
-        
+        public Bitmap GerarPreviaComLinhaBaseIndividual(string texto,int valorCorecaoY, int valorCorecaoX, PropriedadesDeGlifo propiedade)
+        {
+            Bitmap previa = new Bitmap(PreviaComLinhaBaseIdividual);
+
+            using (Graphics g = Graphics.FromImage(previa))
+            {
+                
+                g.DrawImage(ObtenhaImagemDeGlifo(propiedade), valorCorecaoX, valorCorecaoY);                                  
+            }
+
+
+            return previa;
+        }
+
+
+
     }
 
     public class ImagemDeGlifo
