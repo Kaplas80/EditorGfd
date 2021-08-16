@@ -13,7 +13,7 @@ namespace EditorGfd.GFD
         public int Desconhecido0 { get; set; }
         public int Desconhecido1 { get; set; }
         public int Desconhecido2 { get; set; }
-        public int LarguraMaximaGlifo { get; set; }
+        public int TamanhoDaFonte { get; set; }
         public int QuantidadeDeTexturas { get; set; }
         public long QuantidadeDeInformacoesCaracteres { get; set; }
         public int QuatidadeDeEntradasAdicionais { get; set; }
@@ -38,7 +38,7 @@ namespace EditorGfd.GFD
                 Desconhecido0 = br.ReadInt32();
                 Desconhecido1 = br.ReadInt32();
                 Desconhecido2 = br.ReadInt32();
-                LarguraMaximaGlifo = br.ReadInt32();
+                TamanhoDaFonte = br.ReadInt32();
                 QuantidadeDeTexturas = br.ReadInt32();
                 QuantidadeDeInformacoesCaracteres = br.ReadInt64();
                 QuatidadeDeEntradasAdicionais = br.ReadInt32();
@@ -64,7 +64,7 @@ namespace EditorGfd.GFD
             bw.Write(Desconhecido0);
             bw.Write(Desconhecido1);
             bw.Write(Desconhecido2);
-            bw.Write(LarguraMaximaGlifo);
+            bw.Write(TamanhoDaFonte);
             bw.Write(QuantidadeDeTexturas);
             bw.Write(QuantidadeDeInformacoesCaracteres);
             bw.Write(QuatidadeDeEntradasAdicionais);

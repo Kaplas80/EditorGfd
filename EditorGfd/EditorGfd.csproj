@@ -28,7 +28,7 @@
     <ProductName>Editor de Gfd</ProductName>
     <PublisherName>Matheus Abreu</PublisherName>
     <SuiteName>Editor de Gfd</SuiteName>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>0.5.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -90,6 +90,16 @@
   <ItemGroup>
     <Compile Include="GFD\CabecalhoGfd.cs" />
     <Compile Include="GFD\PropriedadesDeGlifo.cs" />
+    <Compile Include="Properties\Localizacao_EN.Designer.cs">
+      <DependentUpon>Localizacao_EN.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Localizacao_PT_BR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Localizacao_PT_BR.resx</DependentUpon>
+    </Compile>
     <Compile Include="TelaEditorDeGfd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +109,17 @@
     <Compile Include="GFD\Gfd.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Localizacao_EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localizacao_EN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localizacao_PT_BR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localizacao_PT_BR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaEditorDeGfd.pt-BR.resx">
+      <DependentUpon>TelaEditorDeGfd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaEditorDeGfd.resx">
       <DependentUpon>TelaEditorDeGfd.cs</DependentUpon>
     </EmbeddedResource>

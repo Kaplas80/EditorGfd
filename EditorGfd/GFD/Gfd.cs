@@ -9,6 +9,9 @@ namespace EditorGfd.GFD
 {
     public class Gfd
     {
+        public static string MensagemDeValidacaoDeVersao;
+        public static string MensagemDeValidacaoVazio;
+        public static string MensagemDeValidacaoNaLista;
         public CabecalhoGfd CabecalhoGfd { get; set; }
         public List<PropriedadesDeGlifo> PropriedadesDeGlifos { get; set; }
         public List<ImagemDeGlifo> ImagensDeGlifos { get; set; }
@@ -27,7 +30,7 @@ namespace EditorGfd.GFD
 
             if (CabecalhoGfd.Versao != 0x11107)
             {
-                throw new ArgumentException("Versão de gfd não suportada.");
+                throw new ArgumentException(MensagemDeValidacaoDeVersao);
             }
 
             ImagensDeGlifos = new List<ImagemDeGlifo>();
@@ -45,7 +48,7 @@ namespace EditorGfd.GFD
             PropriedadesDeGlifos = PropriedadesDeGlifos.OrderBy(c => c.Codigo).ToList();
             br.Close();
 
-            BaseGerarPreviaInGame = GerarImagensDePrevia(new Bitmap(370, 100));
+            BaseGerarPreviaInGame = GerarImagensDePrevia(new Bitmap(400, 100));
             PreviaComLinhaBaseIdividual = GerarImagensDePrevia(new Bitmap(150, 150));
 
         }
@@ -115,49 +118,37 @@ namespace EditorGfd.GFD
         }
 
         public Bitmap ObtenhaImagemDeGlifo(PropriedadesDeGlifo propriedades) 
-        {
-          
+        {        
             Rectangle cloneRect = new Rectangle(propriedades.PosicaoGlifoConvertidaX,propriedades.PosicaoGlifoConvertidaY,(int)propriedades.LarguraDoCaractere, (int)propriedades.AlturaDoCaractere);
-            PixelFormat format = ImagensDeGlifos[propriedades.IdTextura].Imagem.PixelFormat;
-      
-            var bitmap = new Bitmap((int)propriedades.LarguraDoGlifo,(int)propriedades.AlturaDoCaractere, format);
-            if (propriedades.LarguraDoCaractere > propriedades.LarguraDoGlifo)
-            {
-                bitmap = new Bitmap((int)propriedades.LarguraDoCaractere, (int)propriedades.AlturaDoCaractere, format);
-            }
+            PixelFormat format = ImagensDeGlifos[propriedades.IdTextura].Imagem.PixelFormat;      
+            var bitmap = new Bitmap(100,(int)CabecalhoGfd.AlturaMaximaCaractere + 1, format);
             using (var g = Graphics.FromImage(bitmap))
             {
                 g.DrawImage(ImagensDeGlifos[propriedades.IdTextura].Imagem, 0,0, cloneRect, GraphicsUnit.Pixel);
                 return bitmap;
             }
-
-            
-
+           
         }
 
         public string MofidifiquePropriedadesDeGlifo(string caractere, int larguraCaractere, int alturaCaractere, int larguraDoGlifo, int correcaoX, int correcaoY, PropriedadesDeGlifo propriedades)
         {
             List<string> erros = new List<string>();
             if (propriedades.Codigo == 0x20)
-                caractere = " ";
-
-            char caractereC = Convert.ToChar(caractere);
+                caractere = " ";     
 
             if (string.IsNullOrEmpty(caractere) && propriedades.Codigo != 0x20)
             {
-                erros.Add("O campo de caractere não pode estar vazio.");
+                erros.Add(MensagemDeValidacaoVazio);
             }         
 
             if (CaractereEstaPresenteNaLista(caractere, propriedades.Caractere.ToString()))
             {
-                erros.Add("O caractere já está presente na lista.");
+                erros.Add(MensagemDeValidacaoNaLista);
             }
-
-            
-            
-
+           
             if (erros.Count == 0)
             {
+                char caractereC = Convert.ToChar(caractere);
                 propriedades.LarguraDoCaractere = larguraCaractere;
                 propriedades.AlturaDoCaractere = alturaCaractere;
                 propriedades.LarguraDoGlifo = larguraDoGlifo;
@@ -182,13 +173,13 @@ namespace EditorGfd.GFD
                     {
                         continue;
                     }
+                    
                     ImagensDeGlifos[idTextura].Imagem.SetPixel(x,y,Color.Transparent);
                 }
             }
 
             using (Graphics g = Graphics.FromImage(ImagensDeGlifos[idTextura].Imagem))
-            {
-               
+            {              
               g.DrawImage(imagemCaractere, posicaoX, posicaoY);
             }
 
@@ -222,9 +213,9 @@ namespace EditorGfd.GFD
                     Pen penLargCarac = new Pen(Color.Red);
                     Pen penalturaCarac = new Pen(Color.Orange);
                     Pen penLargGlifo = new Pen(Color.Blue);
-                    g.DrawLine(penLargCarac, new Point(0, alturaCaractere - 1), new Point(larguraCaractere - 1, alturaCaractere - 1));
-                    g.DrawLine(penalturaCarac, new Point(larguraCaractere - 1, 0), new Point(larguraCaractere - 1, alturaCaractere - 1));
-                    g.DrawLine(penLargGlifo, new Point(larguraDoGlifo - 1, 0), new Point(larguraDoGlifo - 1, alturaCaractere - 1));
+                    g.DrawLine(penLargCarac, new Point(0, alturaCaractere), new Point(larguraCaractere, alturaCaractere));
+                    g.DrawLine(penalturaCarac, new Point(larguraCaractere, 0), new Point(larguraCaractere, alturaCaractere));
+                    g.DrawLine(penLargGlifo, new Point(larguraDoGlifo, 0), new Point(larguraDoGlifo, alturaCaractere));
                 }
 
                 return fonte;
@@ -264,11 +255,9 @@ namespace EditorGfd.GFD
             Bitmap previa = new Bitmap(PreviaComLinhaBaseIdividual);
 
             using (Graphics g = Graphics.FromImage(previa))
-            {
-                
+            {                
                 g.DrawImage(ObtenhaImagemDeGlifo(propiedade), valorCorecaoX, valorCorecaoY);                                  
             }
-
 
             return previa;
         }

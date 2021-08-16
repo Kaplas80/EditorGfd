@@ -19,19 +19,17 @@ namespace EditorGfd.GFD
         public byte[] Finalizador { get; set; }
         public int PosicaoGlifoConvertidaX { get; set; }
         public int PosicaoGlifoConvertidaY { get; set; }
-        public int RangeX { get; set; }
-        public int RangeY { get; set; }
 
         public PropriedadesDeGlifo(BinaryReader br)
         {
             Codigo = br.ReadInt32();
             Caractere = Convert.ToChar(Codigo);
-            LarguraDoCaractere = br.ReadSingle();
-            AlturaDoCaractere = br.ReadSingle();
-            CorrecaoX = br.ReadSingle();
-            CorrecaoY = br.ReadSingle();
-            LarguraDoGlifo = br.ReadSingle();
-            LarguraMaximaGlifo = br.ReadSingle();
+            LarguraDoCaractere = (float)Math.Floor(br.ReadSingle());
+            AlturaDoCaractere = (float)Math.Floor(br.ReadSingle());
+            CorrecaoX = (float)Math.Floor(br.ReadSingle());
+            CorrecaoY = (float)Math.Floor(br.ReadSingle());
+            LarguraDoGlifo = (float)Math.Floor(br.ReadSingle());
+            LarguraMaximaGlifo = (float)Math.Floor(br.ReadSingle());
             IdTextura = br.ReadByte();
             PosicaoDoGlifo = br.ReadBytes(3);
             Padding = br.ReadByte();
@@ -40,8 +38,6 @@ namespace EditorGfd.GFD
             PosicaoGlifoConvertidaX = posicoes & 0xFFF;
             PosicaoGlifoConvertidaY = posicoes >> 12;
 
-            RangeX = PosicaoGlifoConvertidaX + (int)LarguraDoGlifo;
-            RangeY = PosicaoGlifoConvertidaY + (int)AlturaDoCaractere;
         }
 
         public PropriedadesDeGlifo(PropriedadesDeGlifo propriedadesDeGlifo)
@@ -60,9 +56,6 @@ namespace EditorGfd.GFD
             Finalizador = propriedadesDeGlifo.Finalizador;
             PosicaoGlifoConvertidaX = propriedadesDeGlifo.PosicaoGlifoConvertidaX;
             PosicaoGlifoConvertidaY = propriedadesDeGlifo.PosicaoGlifoConvertidaY;
-
-            RangeX = propriedadesDeGlifo.RangeX;
-            RangeY = propriedadesDeGlifo.RangeY;
         }
 
         public void EscreverPropriedades(BinaryWriter bw)
