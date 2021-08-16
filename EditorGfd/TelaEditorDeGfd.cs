@@ -1,11 +1,14 @@
 ﻿using EditorGfd.GFD;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace EditorGfd
 {
@@ -209,12 +212,12 @@ namespace EditorGfd
         private void PrepapararDataGrid()
         {
             DgFontes.DataSource = _gfd.PropriedadesDeGlifos;
-            this.DgFontes.Columns["PosicaoDoGlifo"].Visible = false;
-            this.DgFontes.Columns["Padding"].Visible = false;
-            this.DgFontes.Columns["Finalizador"].Visible = false;
-            this.DgFontes.Columns["PosicaoGlifoConvertidaX"].Visible = false;
-            this.DgFontes.Columns["PosicaoGlifoConvertidaY"].Visible = false;
-            this.DgFontes.Columns["LarguraMaximaGlifo"].Visible = false;
+            DgFontes.Columns["PosicaoDoGlifo"].Visible = false;
+            DgFontes.Columns["Padding"].Visible = false;
+            DgFontes.Columns["Finalizador"].Visible = false;
+            DgFontes.Columns["PosicaoGlifoConvertidaX"].Visible = false;
+            DgFontes.Columns["PosicaoGlifoConvertidaY"].Visible = false;
+            DgFontes.Columns["LarguraMaximaGlifo"].Visible = false;
             DgFontes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             DgFontes.Columns[0].HeaderText =GerenciadorLocalizacao.GetString("DatagridColCodigo");
             DgFontes.Columns[1].HeaderText = GerenciadorLocalizacao.GetString("DatagridColCaractere");
@@ -223,8 +226,7 @@ namespace EditorGfd
             DgFontes.Columns[4].HeaderText = GerenciadorLocalizacao.GetString("DatagridColCorrecaoX");
             DgFontes.Columns[5].HeaderText = GerenciadorLocalizacao.GetString("DatagridColCorrecaoY");
             DgFontes.Columns[6].HeaderText = GerenciadorLocalizacao.GetString("DatagridColLgGlifo");
-           // DgFontes.Columns[7].HeaderText = GerenciadorLocalizacao.GetString("DatagridColMaxLgGlifo");
-            DgFontes.Columns[7].HeaderText = GerenciadorLocalizacao.GetString("DatagridColIdTextura");
+            DgFontes.Columns[8].HeaderText = GerenciadorLocalizacao.GetString("DatagridColIdTextura");
             DgFontes.ReadOnly = true;
 
         }
@@ -348,10 +350,13 @@ namespace EditorGfd
 
         private void ObtenhaLocalizacao()
         {
-            if (CultureInfo.CurrentCulture.Name.Contains("pt-BR"))
-                GerenciadorLocalizacao = new ResourceManager("EditorGfd.Properties.Localizacao_PT_BR",typeof(TelaEditorDeGfd).Assembly);                            
+            if (CultureInfo.CurrentCulture.Name.Contains("pt"))
+                GerenciadorLocalizacao = new ResourceManager("EditorGfd.Properties.Localizacao_PT_BR",typeof(TelaEditorDeGfd).Assembly);
+            else if(CultureInfo.CurrentCulture.Name.Contains("es"))
+                GerenciadorLocalizacao = new ResourceManager("EditorGfd.Properties.Localizacao_ES", typeof(TelaEditorDeGfd).Assembly);
             else
-                GerenciadorLocalizacao = new ResourceManager("EditorGfd.Properties.Localizacao_EN",typeof(TelaEditorDeGfd).Assembly);          
+                GerenciadorLocalizacao = new ResourceManager("EditorGfd.Properties.Localizacao_EN",typeof(TelaEditorDeGfd).Assembly);       
+            
             
             AplicarLocaolizaoNosComponentes();
 

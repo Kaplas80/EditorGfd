@@ -118,153 +118,153 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BtnPesquisar" xml:space="preserve">
-    <value>Pesquisar</value>
+    <value>Buscar</value>
   </data>
   <data name="BtnSalvar" xml:space="preserve">
-    <value>Salvar propriedade</value>
+    <value>Guardar propiedades</value>
   </data>
   <data name="DatagridColAltura" xml:space="preserve">
-    <value>Altura do caractere</value>
+    <value>Alto del caracter</value>
   </data>
   <data name="DatagridColCaractere" xml:space="preserve">
-    <value>Caractere</value>
+    <value>Caracter</value>
   </data>
   <data name="DatagridColCodigo" xml:space="preserve">
     <value>Código</value>
   </data>
   <data name="DatagridColCorrecaoX" xml:space="preserve">
-    <value>Correção X</value>
+    <value>Corrección X</value>
   </data>
   <data name="DatagridColCorrecaoY" xml:space="preserve">
-    <value>Correção Y</value>
+    <value>Corrección Y</value>
   </data>
   <data name="DatagridColIdTextura" xml:space="preserve">
-    <value>Id Textura</value>
+    <value>Id de textura</value>
   </data>
   <data name="DatagridColLargura" xml:space="preserve">
-    <value>Largura do caractere</value>
+    <value>Ancho del caracter</value>
   </data>
   <data name="DatagridColLgGlifo" xml:space="preserve">
-    <value>Largura do glifo</value>
+    <value>Ancho del glifo</value>
   </data>
   <data name="DatagridColMaxLgGlifo" xml:space="preserve">
     <value>Largura máxima do glifo</value>
   </data>
   <data name="FiltroOpf" xml:space="preserve">
-    <value>Arquivos .gfd (*.gfd)|*.gfd</value>
+    <value>Archivos .gfd(*.gfd)|*.gfd</value>
   </data>
   <data name="LbAltura" xml:space="preserve">
-    <value>Altura</value>
+    <value>Alto</value>
   </data>
   <data name="LbBase" xml:space="preserve">
-    <value>Base</value>
+    <value>Línea base</value>
   </data>
   <data name="LbCaractere" xml:space="preserve">
-    <value>Caractere</value>
+    <value>Caracter</value>
   </data>
   <data name="LbCorecaoX" xml:space="preserve">
-    <value>Correção relativa Eixo X</value>
+    <value>Corrección X</value>
   </data>
   <data name="LbCorecaoY" xml:space="preserve">
-    <value>Correção relativa Eixo Y</value>
+    <value>Corrección Y</value>
   </data>
   <data name="LbDescendente" xml:space="preserve">
-    <value>Descendente</value>
+    <value>Línea inferior</value>
   </data>
   <data name="LbLargura" xml:space="preserve">
-    <value>Largura</value>
+    <value>Ancho</value>
   </data>
   <data name="LbLarguraGlifo" xml:space="preserve">
-    <value>Largura do glifo</value>
+    <value>Ancho del glifo</value>
   </data>
   <data name="LbLeAltura" xml:space="preserve">
-    <value>Altura do Caractere</value>
+    <value>Alto del caracter</value>
   </data>
   <data name="LbLeLargura" xml:space="preserve">
-    <value>Largura do caractere</value>
+    <value>Ancho del caracter</value>
   </data>
   <data name="LbLeLarguraGlifo" xml:space="preserve">
-    <value>Largura do glifo</value>
+    <value>Ancho del glifo</value>
   </data>
   <data name="LbLeLinhaBase" xml:space="preserve">
-    <value>Linha base</value>
+    <value>Línea base</value>
   </data>
   <data name="LbLeLinhaDesc" xml:space="preserve">
-    <value>Linha descendente</value>
+    <value>Línea inferior</value>
   </data>
   <data name="LbPrevia" xml:space="preserve">
-    <value>Prévia in game</value>
+    <value>Vista previa</value>
   </data>
   <data name="LbSalvarGfd" xml:space="preserve">
-    <value>Salvar modificações</value>
+    <value>Guardar cambios</value>
   </data>
   <data name="LbTitulo" xml:space="preserve">
-    <value>Propriedades de caracteres</value>
+    <value>Tabla de caracteres</value>
   </data>
   <data name="LbTituloEditorProp" xml:space="preserve">
-    <value>Editor de propriedades</value>
+    <value>Editor de propiedades</value>
   </data>
   <data name="MensagemArquivoSalvo" xml:space="preserve">
-    <value>Arquivo salvo em:</value>
+    <value>Archivos guardados en:</value>
   </data>
   <data name="MensagemAvisoDeTexturas" xml:space="preserve">
-    <value>Selecione a pasta contenha os seguintes arquivos png:</value>
+    <value>Seleccione la carpeta que contiene los siguientes archivos png:</value>
   </data>
   <data name="MensagemAvisoFechar" xml:space="preserve">
-    <value>Fechar gfd sem salvar as modificações?</value>
+    <value>¿Cerrar el gfd sin guardar?</value>
   </data>
   <data name="MensagemAvisoSair" xml:space="preserve">
-    <value>Deseja sair sem salvar as modificações?</value>
+    <value>¿Salir sin guardar?</value>
   </data>
   <data name="MensagemCampoVazio" xml:space="preserve">
-    <value>O campo de caractere não pode estar vazio.</value>
+    <value>El campo del caracter no puede estar vacío.</value>
   </data>
   <data name="MensagemCancelaOp" xml:space="preserve">
-    <value>Operação cancelada.</value>
+    <value>Cancelado</value>
   </data>
   <data name="MensagemCaracJaExiste" xml:space="preserve">
-    <value>O caractere já está presente na lista.</value>
+    <value>El caracter ya existe en la lista.</value>
   </data>
   <data name="MensagemCaracNaoEncoPt1" xml:space="preserve">
-    <value>Caractere</value>
+    <value>Caracter</value>
   </data>
   <data name="MensagemErroSalvar" xml:space="preserve">
-    <value>Não foi possível salvar o arquivo no seguinte diretório:</value>
+    <value>No se pudo guardar el archivo en el siguiente directorio:</value>
   </data>
   <data name="MensagemGfdNaoSuportado" xml:space="preserve">
-    <value>Versão de gfd não suportado.</value>
+    <value>Versión de gfd no soportada.</value>
   </data>
   <data name="MensagemNaoEcontrado" xml:space="preserve">
-    <value>não encontrado.</value>
+    <value>no encontrado.</value>
   </data>
   <data name="MensagemOp" xml:space="preserve">
-    <value>Operação necessária:</value>
+    <value>Obligatorio:</value>
   </data>
   <data name="MensagemTexturasNãoEncontradas" xml:space="preserve">
-    <value>Não foram encontrados os seguintes arquivos png:</value>
+    <value>No se encontró los siguientes png:</value>
   </data>
   <data name="TituloAviso" xml:space="preserve">
-    <value>Aviso!</value>
+    <value>Advertencia</value>
   </data>
   <data name="TituloDoForm" xml:space="preserve">
     <value>Editor de GFD</value>
   </data>
   <data name="TituloErro" xml:space="preserve">
-    <value>Erro!</value>
+    <value>¡Error!</value>
   </data>
   <data name="TsAbrirGfd" xml:space="preserve">
-    <value>Abrir arquivo .gfd</value>
+    <value>Abrir archivo .gfd</value>
   </data>
   <data name="TsEdtGFDSobre" xml:space="preserve">
-    <value>Editor de GFD v0.5 por Matheus Abreu</value>
+    <value>GFD por Matheus Abreu</value>
   </data>
   <data name="TSFecharGfd" xml:space="preserve">
-    <value>Fechar .gfd</value>
+    <value>Cerrar archivo .gfd</value>
   </data>
   <data name="TsGfd" xml:space="preserve">
     <value>Gfd</value>
   </data>
   <data name="TSSobre" xml:space="preserve">
-    <value>Sobre</value>
+    <value>Acerca de</value>
   </data>
 </root>

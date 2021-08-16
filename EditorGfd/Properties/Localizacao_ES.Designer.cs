@@ -22,14 +22,14 @@ namespace EditorGfd.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Localizacao_PT_BR {
+    internal class Localizacao_ES {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Localizacao_PT_BR() {
+        internal Localizacao_ES() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EditorGfd.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EditorGfd.Properties.Localizacao_PT_BR", typeof(Localizacao_PT_BR).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EditorGfd.Properties.Localizacao_ES", typeof(Localizacao_ES).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Pesquisar.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Buscar.
         /// </summary>
         internal static string BtnPesquisar {
             get {
@@ -70,7 +70,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Salvar propriedade.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Guardar propiedades.
         /// </summary>
         internal static string BtnSalvar {
             get {
@@ -79,7 +79,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Altura do caractere.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Alto del caracter.
         /// </summary>
         internal static string DatagridColAltura {
             get {
@@ -88,7 +88,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Caractere.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Caracter.
         /// </summary>
         internal static string DatagridColCaractere {
             get {
@@ -106,7 +106,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Correção X.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Corrección X.
         /// </summary>
         internal static string DatagridColCorrecaoX {
             get {
@@ -115,7 +115,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Correção Y.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Corrección Y.
         /// </summary>
         internal static string DatagridColCorrecaoY {
             get {
@@ -124,7 +124,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Id Textura.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Id de textura.
         /// </summary>
         internal static string DatagridColIdTextura {
             get {
@@ -133,7 +133,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Largura do caractere.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Ancho del caracter.
         /// </summary>
         internal static string DatagridColLargura {
             get {
@@ -142,7 +142,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Largura do glifo.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Ancho del glifo.
         /// </summary>
         internal static string DatagridColLgGlifo {
             get {
@@ -160,7 +160,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Arquivos .gfd (*.gfd)|*.gfd.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Archivos .gfd(*.gfd)|*.gfd.
         /// </summary>
         internal static string FiltroOpf {
             get {
@@ -169,7 +169,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Altura.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Alto.
         /// </summary>
         internal static string LbAltura {
             get {
@@ -178,7 +178,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Base.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Línea base.
         /// </summary>
         internal static string LbBase {
             get {
@@ -187,7 +187,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Caractere.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Caracter.
         /// </summary>
         internal static string LbCaractere {
             get {
@@ -196,7 +196,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Correção relativa Eixo X.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Corrección X.
         /// </summary>
         internal static string LbCorecaoX {
             get {
@@ -205,7 +205,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Correção relativa Eixo Y.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Corrección Y.
         /// </summary>
         internal static string LbCorecaoY {
             get {
@@ -214,7 +214,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Descendente.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Línea inferior.
         /// </summary>
         internal static string LbDescendente {
             get {
@@ -223,7 +223,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Largura.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Ancho.
         /// </summary>
         internal static string LbLargura {
             get {
@@ -232,7 +232,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Largura do glifo.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Ancho del glifo.
         /// </summary>
         internal static string LbLarguraGlifo {
             get {
@@ -241,7 +241,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Altura do Caractere.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Alto del caracter.
         /// </summary>
         internal static string LbLeAltura {
             get {
@@ -250,7 +250,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Largura do caractere.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Ancho del caracter.
         /// </summary>
         internal static string LbLeLargura {
             get {
@@ -259,7 +259,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Largura do glifo.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Ancho del glifo.
         /// </summary>
         internal static string LbLeLarguraGlifo {
             get {
@@ -268,7 +268,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Linha base.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Línea base.
         /// </summary>
         internal static string LbLeLinhaBase {
             get {
@@ -277,7 +277,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Linha descendente.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Línea inferior.
         /// </summary>
         internal static string LbLeLinhaDesc {
             get {
@@ -286,7 +286,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Prévia in game.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Vista previa.
         /// </summary>
         internal static string LbPrevia {
             get {
@@ -295,7 +295,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Salvar modificações.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Guardar cambios.
         /// </summary>
         internal static string LbSalvarGfd {
             get {
@@ -304,7 +304,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Propriedades de caracteres.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Tabla de caracteres.
         /// </summary>
         internal static string LbTitulo {
             get {
@@ -313,7 +313,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Editor de propriedades.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Editor de propiedades.
         /// </summary>
         internal static string LbTituloEditorProp {
             get {
@@ -322,7 +322,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Arquivo salvo em:.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Archivos guardados en:.
         /// </summary>
         internal static string MensagemArquivoSalvo {
             get {
@@ -331,7 +331,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Selecione a pasta contenha os seguintes arquivos png:.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Seleccione la carpeta que contiene los siguientes archivos png:.
         /// </summary>
         internal static string MensagemAvisoDeTexturas {
             get {
@@ -340,7 +340,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Fechar gfd sem salvar as modificações?.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ¿Cerrar el gfd sin guardar?.
         /// </summary>
         internal static string MensagemAvisoFechar {
             get {
@@ -349,7 +349,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Deseja sair sem salvar as modificações?.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ¿Salir sin guardar?.
         /// </summary>
         internal static string MensagemAvisoSair {
             get {
@@ -358,7 +358,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a O campo de caractere não pode estar vazio..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a El campo del caracter no puede estar vacío..
         /// </summary>
         internal static string MensagemCampoVazio {
             get {
@@ -367,7 +367,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Operação cancelada..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Cancelado.
         /// </summary>
         internal static string MensagemCancelaOp {
             get {
@@ -376,7 +376,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a O caractere já está presente na lista..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a El caracter ya existe en la lista..
         /// </summary>
         internal static string MensagemCaracJaExiste {
             get {
@@ -385,7 +385,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Caractere.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Caracter.
         /// </summary>
         internal static string MensagemCaracNaoEncoPt1 {
             get {
@@ -394,7 +394,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Não foi possível salvar o arquivo no seguinte diretório:.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a No se pudo guardar el archivo en el siguiente directorio:.
         /// </summary>
         internal static string MensagemErroSalvar {
             get {
@@ -403,7 +403,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Versão de gfd não suportado..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Versión de gfd no soportada..
         /// </summary>
         internal static string MensagemGfdNaoSuportado {
             get {
@@ -412,7 +412,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a não encontrado..
+        ///   Consulta uma cadeia de caracteres localizada semelhante a no encontrado..
         /// </summary>
         internal static string MensagemNaoEcontrado {
             get {
@@ -421,7 +421,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Operação necessária:.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Obligatorio:.
         /// </summary>
         internal static string MensagemOp {
             get {
@@ -430,7 +430,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Não foram encontrados os seguintes arquivos png:.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a No se encontró los siguientes png:.
         /// </summary>
         internal static string MensagemTexturasNãoEncontradas {
             get {
@@ -439,7 +439,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Aviso!.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Advertencia.
         /// </summary>
         internal static string TituloAviso {
             get {
@@ -457,7 +457,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Erro!.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a ¡Error!.
         /// </summary>
         internal static string TituloErro {
             get {
@@ -466,7 +466,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Abrir arquivo .gfd.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Abrir archivo .gfd.
         /// </summary>
         internal static string TsAbrirGfd {
             get {
@@ -475,7 +475,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Editor de GFD v0.5 por Matheus Abreu.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a GFD por Matheus Abreu.
         /// </summary>
         internal static string TsEdtGFDSobre {
             get {
@@ -484,7 +484,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Fechar .gfd.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Cerrar archivo .gfd.
         /// </summary>
         internal static string TSFecharGfd {
             get {
@@ -502,7 +502,7 @@ namespace EditorGfd.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Sobre.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Acerca de.
         /// </summary>
         internal static string TSSobre {
             get {

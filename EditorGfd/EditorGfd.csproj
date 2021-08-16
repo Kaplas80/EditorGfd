@@ -28,8 +28,8 @@
     <ProductName>Editor de Gfd</ProductName>
     <PublisherName>Matheus Abreu</PublisherName>
     <SuiteName>Editor de Gfd</SuiteName>
-    <ApplicationRevision>4</ApplicationRevision>
-    <ApplicationVersion>0.5.0.%2a</ApplicationVersion>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -95,6 +95,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Properties\Localizacao_ES.Designer.cs">
+      <DependentUpon>Localizacao_ES.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\Localizacao_PT_BR.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +117,10 @@
     <EmbeddedResource Include="Properties\Localizacao_EN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Localizacao_EN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Localizacao_ES.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localizacao_ES.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Localizacao_PT_BR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
